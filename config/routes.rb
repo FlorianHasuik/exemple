@@ -1,8 +1,21 @@
 Rails.application.routes.draw do
-  get 'pages/home'
+  
+  # New routes
 
-  get 'pages/contact'
-  get 'pages/about'
+  match '/about' => 'pages#about', :as => 'about', via: [:get, :post]
+  match '/help' => 'pages#help', :as => 'help', via: [:get, :post]
+  match '/contact' => 'pages#contact', :as => 'contact', via: [:get, :post]
+  match '/' => 'pages#home', :as => 'home', via: [:get, :post]
+
+  
+  
+  # Aciennne routes
+  #get 'pages/home'
+
+
+  #get 'pages/contact'
+  #get 'pages/about'
+  #get 'pages/help'
   
 
   # The priority is based upon order of creation: first created -> highest priority.
