@@ -14,11 +14,9 @@ RSpec.describe PagesController, :type => :controller do
       expect(response).to have_http_status(:success)
     end
     
-    it "have a good title" do
-      get 'home'
-      within('head title') { page.should have_content @base_title + " | Accueil" }
-      # should have_selector se place sur 'id d'une div 
-      #response.should have_selector("title", :content => "Simple App du Tutoriel Ruby on Rails | Accueil")
+    it "render pages#home" do
+      get :home
+      expect(response).to render_template 'pages/home'
     end
   end
 
@@ -28,10 +26,9 @@ RSpec.describe PagesController, :type => :controller do
       expect(response).to have_http_status(:success)
     end
     
-    it "have a good title" do
-      get 'contact'
-      within('head title') { page.should have_content @base_title + " | Contact" }
-      #response.should have_selector("title", :content => "Simple App du Tutoriel Ruby on Rails | Contact")
+    it "render pages#contact" do
+      get :contact
+      expect(response).to render_template 'pages/contact'
     end
   end
   
@@ -41,10 +38,9 @@ RSpec.describe PagesController, :type => :controller do
       expect(response).to have_http_status(:success)
     end
     
-    it "have a good title" do
-      get 'about'
-      within('head title') { page.should have_content @base_title + " | A Propos" }
-      #response.should have_selector("title", :content => "Simple App du Tutoriel Ruby on Rails | A Propos")
+    it "render pages#about" do
+      get :about
+      expect(response).to render_template 'pages/about'
     end
   end
 
@@ -54,10 +50,9 @@ RSpec.describe PagesController, :type => :controller do
       expect(response).to have_http_status(:success)
     end
     
-    it "have a good title" do
-      get 'help'
-      within('head title') { page.should have_content @base_title + " | Aides" }
-      #response.should have_selector("title", :content => "Simple App du Tutoriel Ruby on Rails | A Propos")
+    it "render pages#help" do
+      get :help
+      expect(response).to render_template 'pages/help'
     end
   end
 end
