@@ -35,6 +35,7 @@ end
 group :test do
   gem 'rspec-core', '~> 3.1.7'
   gem 'webrat', '0.7.1'
+  gem 'capybara'
 end
 
 # Use ActiveModel has_secure_password
