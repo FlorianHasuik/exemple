@@ -30,6 +30,7 @@ gem 'sdoc', '~> 0.4.0',     group: :doc
 group :development do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'spring'
+  gem 'annotate', '~> 2.6.5'
 end
 
 group :test do
